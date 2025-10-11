@@ -10,14 +10,14 @@ This will create your own copy of this project, which you can modify freely — 
 </p>
 
 
-<h1 align="center">SHG-CW-G-Heat-Equation</h1>
+<h1 align="center">SHG-PW-G-Heat-Equation</h1>
 
 <div align="center">
 
 | **Term** | **Definition** |
 |----------|----------------|
 | **SHG** | Second Harmonic Generation |
-| **CW** | Continuous Wave |
+| **PW** | Pulsed Wave |
 | **G** | Gaussian |
 </div>
 
@@ -26,7 +26,7 @@ This will create your own copy of this project, which you can modify freely — 
 <div align="center">
 
 Article title:       
-**Temperature Distribution in a Gaussian End-Pumped Nonlinear KTP Crystal: the Temperature Dependence of Thermal Conductivity and Radiation Boundary Condition**
+**Complete Anisotropic Time-Dependent Heat Equation in KTP Crystal under Repetitively Pulsed Gaussian Beams: A Numerical Approach**
 </div>
 
 &nbsp;
@@ -61,15 +61,15 @@ Article title:
 ## 1. About this repository
 
 
-This repository contains the research article **“Temperature Distribution in a Gaussian End-Pumped Nonlinear KTP Crystal: the Temperature Dependence of Thermal Conductivity and Radiation Boundary Condition”**, together with supporting source code, numerical results, and reproducibility assets.  
+This repository contains the **toolkit and computational tools** used in the research article **"Complete Anisotropic Time-Dependent Heat Equation in KTP Crystal under Repetitively Pulsed Gaussian Beams: A Numerical Approach"**, including source code, numerical solvers, and reproducibility assets.  
 
 
-Continuous-wave (CW) second harmonic generation in nonlinear crystals is strongly affected by heat dissipation. This work analyzes the **transient temperature distribution** in a KTP crystal under Gaussian end-pumping by solving the nonlinear, inhomogeneous heat equation. Unlike many earlier models, the study incorporates:  
+This toolkit provides computational tools for analyzing **transient temperature distribution** in KTP crystals under Gaussian end-pumping by solving the nonlinear, inhomogeneous heat equation. The toolkit implements advanced modeling features that are often neglected in simpler approaches:  
 
 - **Temperature-dependent thermal conductivity** of KTP  
 - **Convective and radiative boundary conditions** at crystal surfaces  
 
-A finite difference method (FDM) solver was implemented to numerically evaluate the system. Results show that neglecting thermal conductivity variations leads to significant temperature prediction errors, and while radiative effects are negligible in thin crystals, they become relevant for larger geometries with wide pump beams. These findings improve modeling accuracy for **thermal lensing, phase mismatching, and efficiency reduction** in nonlinear optical systems.  
+The toolkit includes a finite difference method (FDM) solver for numerical evaluation of the system. The research shows that neglecting thermal conductivity variations leads to significant temperature prediction errors, and while radiative effects are negligible in thin crystals, they become relevant for larger geometries with wide pump beams. These tools improve modeling accuracy for **thermal lensing, phase mismatching, and efficiency reduction** in nonlinear optical systems.  
 
 
 ```
@@ -88,14 +88,17 @@ Folder PATH listing
 │       SHG-banner.png            <-- SHG project banner
 │
 +---results                       <-- Numerical simulation results
-│       ST_085_time_1_T_r.plt     <-- Radial temperature data
-│       ST_085_time_1_T_t.plt     <-- Transverse temperature data
-│       ST_085_time_1_T_z.plt     <-- Axial temperature data
+│       E_009_f_500_Np_10_tp_50…  <-- Thermal conductivity radial data
+│       E_009_f_500_Np_10_tp_50…  <-- Thermal conductivity transverse data
+│       E_009_f_500_Np_10_tp_50…  <-- Thermal conductivity axial data
+│       E_009_f_500_Np_10_tp_50…  <-- Temperature radial data
+│       E_009_f_500_Np_10_tp_50…  <-- Temperature transverse data
+│       E_009_f_500_Np_10_tp_50…  <-- Temperature axial data
 │
 +---src                           <-- Contains source code
-│       Code_SHG-CW-G-Heat-Equ…   <-- Fortran finite difference solver
+│       Code_SHG_PW_G_Heat-Equ…   <-- Fortran finite difference solver
 │
-│       Article_SHG-CW-G-Heat-…   <-- Main research paper PDF
+│       Article_SHG-PW-G-Heat-…   <-- Main research paper PDF
 │       CITATION.cff              <-- Citation metadata file
 │       LICENSE                   <-- Project license information
 │       README.md                 <-- Project overview and documentation
@@ -110,24 +113,25 @@ Folder PATH listing
 - **Text Editor** (VS Code, Cursor, or any Fortran-capable editor)
 - **PDF Reader** (for accessing research papers)
 - **Git** (for cloning the repository)
+- **Plotting Software** (Gnuplot, Python matplotlib, or similar for result visualization)
 
 ### 2.2. Quick Start
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Second-Harmonic-Generation/SHG-CW-G-Heat-Equation.git
-   cd SHG-CW-G-Heat-Equation
+   git clone https://github.com/Second-Harmonic-Generation/SHG-PW-G-Heat-Equation.git
+   cd SHG-PW-G-Heat-Equation
    ```
 
 2. **Explore the Research Papers**
    - Navigate to the `citation/` folder
-   - Read the main research paper: `Article_SHG_Continuous-Wave_Gaussian_Heat-Equation.pdf`
+   - Read the main research paper: `Article_SHG-PW-G-Heat-Equation.pdf`
    - Review additional papers for comprehensive understanding
 
 3. **Compile and Run the Fortran Code**
    ```bash
    cd src
-   gfortran -o heat_equation 2_Heat-Equation_Continuous-Wave_Gaussian.f90
+   gfortran -o heat_equation Code_SHG_PW_G_Heat-Equation.f90
    ./heat_equation
    ```
 
