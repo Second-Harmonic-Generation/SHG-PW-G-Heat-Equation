@@ -47,7 +47,7 @@ Sabaeian, M., Jalil-Abadi, F.S., Rezaee, M.M., Motazedian, A. and Shahzadeh, M.,
 
 **BibTeX** 
 ```
-@article{sabaeian2015temperature,
+@article{sabaeian2015tempdist,
   title={Temperature distribution in a Gaussian end-pumped nonlinear KTP crystal: the temperature dependence of thermal conductivity and radiation boundary condition},
   author={Sabaeian, Mohammad and Jalil-Abadi, Fatemeh Sedaghat and Rezaee, Mostafa Mohammad and Motazedian, Alireza and Shahzadeh, Mohammadreza},
   journal={Brazilian Journal of Physics},
